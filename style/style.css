@@ -1,0 +1,102 @@
+html
+{
+  margin: 0;
+  padding: 0;
+}
+
+body
+{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /* Find a decent background image! */
+  /* background-image:url(''); */ 
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  font-family: sans-serif;
+  font-size: 12px;
+}
+
+div#acrossTheTop
+{
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 160px;
+  height: 130px;
+  border-bottom-right-radius: 50px;
+  background: hsla(80, 90%, 40%, 0.7);
+}
+
+div.contentDiv
+{
+  margin-top: 20px;
+  margin-left: 35px;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+}
+
+h1.name 
+{
+  color: #fff;
+  padding-left: 15px;
+}
+ 
+ul.treeNode
+{
+  display: none;
+  list-style-type: none;
+  font-weight: bold;
+  margin-left: 10px;
+  padding-left: 0;
+}
+
+img.arrow
+{
+  visibility: hidden;
+}
+
+button.clearLS 
+{
+  margin-left: 15px;
+}
+
+button.addNode
+{
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+div#buttonHolder {
+  margin-top:10px;
+}
+
+div#settingsTab {
+  height: 120px;
+  width: 30px;
+  border-right: 2px solid black;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  position: fixed;
+  background-color: gray;
+}
+
+div#navTabs {
+  margin-top: 150px;
+}
+
+ul.nav {
+  list-style-type: none;
+}
+
+ul.nav li {
+  display: inline; 
+  border: 1px solid black;
+  padding: 10px;
+  font-family: sans;
+  border-top-left-radius: 10px;
+}
+
+ul.nav li:hover {
+  background-color: orange;
+}

@@ -1,0 +1,52 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+<script src="js/tree.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="style/style.css" />
+<title>taskTreeJS v0.1</title>
+</head>
+
+<body>
+
+<header>
+  <div id="acrossTheTop">
+    <h1 style="display: inline;" class="name">taskTreeJS</h1>
+    
+    <!-- <span style="color: white;">This list last saved about </span> -->
+
+  <div id="buttonHolder">
+    <button class="clearLS" style="display: inline;">Clear Task List</button>
+    <button class="addNode">Add a Task +</button>
+  </div>
+  
+</div>
+
+</header>
+
+<section>
+
+  <div id="navTabs">
+    <ul class="nav">
+      <li style="background-color: orange;"><a class="navLink" href="#currentTasks">Current</a></li>
+      <li><a class="navLink" href="#archivedTasks">Archived</a></li>
+    <ul>
+  </div>
+
+  <div id="settingsTab">
+    <img src="imgs/settings.png" /> 
+  </div> 
+ 
+  <div id="currentTasks" class="contentDiv"> 
+    <div id="wrapper"></div>
+  </div>
+
+  <div id="archivedTasks" class="contentDiv" style="display:none;"> 
+    <div id="archiveWrapper"></div>
+  </div>
+
+</section>
+
+</body>
+
+</html>
