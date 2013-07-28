@@ -48,7 +48,7 @@ $(document).ready(function() {
   var allTasks = localStorage.getItem('allTasks');
   var archivedTasks = localStorage.getItem('archivedTasks');
 
-  if ( allTasks ) {
+  if ( allTasks || archivedTasks ) {
     $('#wrapper').append( allTasks );
     $('#archivedTasks #archiveWrapper').append( archivedTasks );
   } else {
@@ -123,6 +123,11 @@ $(document).ready(function() {
     if ( confirm(" You're sure? They'll disappear...never to be seen again. ") ) {
       window.localStorage.removeItem('allTasks'); 
       $("#wrapper").html("");
+      
+      /* Testing */
+      window.localStorage.removeItem('archivedTasks');
+      $("#archivedTasks").html("");
+    
     } else {
       return false;
     }
@@ -131,14 +136,14 @@ $(document).ready(function() {
   // Archive completed items
   $('button.archiveItems').bind('click', function() {
     // Find all parent level items that are checked.
-    var parentLevelItems = $('.parentLevel');
+    var parentLevelItems = $('#currentTasks .parentLevel');
     
     parentLevelItems.each(function() {
       parentItem = $(this);
       var checkbox = parentItem.find('.isComplete');
     
       if (checkbox.attr('checked') === 'checked') {
-        $('#archivedTasks #archiveWrapper').append( parentItem );
+        $('#archiveWrapper').prepend( parentItem );
       }
     });
   });
