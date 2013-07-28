@@ -50,7 +50,7 @@ $(document).ready(function() {
 
   if ( allTasks ) {
     $('#wrapper').append( allTasks );
-    $('#archivedTasks').append( archivedTasks );
+    $('#archivedTasks #archiveWrapper').append( archivedTasks );
   } else {
     $('#wrapper').append( parentLevelTreeNode ); // Start 'em off with something
   }
@@ -110,7 +110,7 @@ $(document).ready(function() {
 
   // Save the task list whenever the window.document object is clicked
   $(document).click(function() {
-    /* Attach additional keyboard event for auto-save */
+    // Attach additional keyboard event for auto-save
     var taskList = $("#wrapper").html();
     var archivedTasks = $("#archivedTasks").html();
 
@@ -138,13 +138,12 @@ $(document).ready(function() {
       var checkbox = parentItem.find('.isComplete');
     
       if (checkbox.attr('checked') === 'checked') {
-        $('#archivedTasks').prepend( parentItem );
+        $('#archivedTasks #archiveWrapper').append( parentItem );
       }
     });
   });
 
   $('a.navLink').bind('click',function() { 
-
     // hide all divs
     $('div.contentDiv').hide();
 
@@ -158,7 +157,6 @@ $(document).ready(function() {
     $(this).parent().css({ 'background-color' : 'orange' });
  
     return false; // fixes href="#..." page reload problem    
-
   });
 
 });
