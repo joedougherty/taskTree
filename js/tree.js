@@ -48,11 +48,14 @@ $(document).ready(function() {
   var allTasks = localStorage.getItem('allTasks');
   var archivedTasks = localStorage.getItem('archivedTasks');
 
-  if ( allTasks || archivedTasks ) {
+  if ( allTasks ) {
     $('#wrapper').append( allTasks );
-    $('#archivedTasks #archiveWrapper').append( archivedTasks );
   } else {
     $('#wrapper').append( parentLevelTreeNode ); // Start 'em off with something
+  }
+
+  if ( archivedTasks ) {
+    $('#archiveWrapper').append( archivedTasks );
   }
 
   // Add a node to the given tree
@@ -112,7 +115,7 @@ $(document).ready(function() {
   $(document).click(function() {
     // Attach additional keyboard event for auto-save
     var taskList = $("#wrapper").html();
-    var archivedTasks = $("#archivedTasks").html();
+    var archivedTasks = $("#archiveWrapper").html();
 
     localStorage.setItem('allTasks', taskList);
     localStorage.setItem('archivedTasks', archivedTasks);
@@ -126,7 +129,7 @@ $(document).ready(function() {
       
       /* Testing */
       window.localStorage.removeItem('archivedTasks');
-      $("#archivedTasks").html("");
+      $("#archiveWrapper").html("");
     
     } else {
       return false;
