@@ -126,11 +126,6 @@ $(document).ready(function() {
     if ( confirm(" You're sure? They'll disappear...never to be seen again. ") ) {
       window.localStorage.removeItem('allTasks'); 
       $("#wrapper").html("");
-      
-      /* Testing */
-      window.localStorage.removeItem('archivedTasks');
-      $("#archiveWrapper").html("");
-    
     } else {
       return false;
     }
