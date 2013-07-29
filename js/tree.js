@@ -1,11 +1,5 @@
 $(document).ready(function() {
 
-  function keyShortcutNewTask(e) {
-    if ( e.altKey && e.shiftKey && (e.keyCode == 78 || e.keyCode == 110) ) {      
-      $("#wrapper").append( treeNode );
-    }
-  }
-
   function ascendLevelsrecur( el, numOfLevels ) {
     if (numOfLevels == 0) {
       return el;
@@ -23,8 +17,6 @@ $(document).ready(function() {
     }
     return el;
   }
-
-  document.addEventListener('keyup', keyShortcutNewTask, false);
 
   var activeDivs = $('#wrapper, #archivedTasks');
 
@@ -126,6 +118,7 @@ $(document).ready(function() {
     if ( confirm(" You're sure? They'll disappear...never to be seen again. ") ) {
       window.localStorage.removeItem('allTasks'); 
       $("#wrapper").html("");
+
     } else {
       return false;
     }
