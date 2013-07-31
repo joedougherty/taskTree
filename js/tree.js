@@ -25,7 +25,7 @@ $(document).ready(function() {
   var collapsed = "imgs/collapsed.png";	
   var expanded = "imgs/expanded.png";
 
-  var treeNode = '<div class="task">' +
+  tasktree.treeNode = '<div class="task">' +
 		   '<ul class="treeNode" style="display: block;">' +
 		     '<li>' + 
 		       '<img class="arrow" src="' + expanded + '" />' +
@@ -37,7 +37,7 @@ $(document).ready(function() {
 	           '</ul>' +
 		   '</div>';
 
-  var parentLevelTreeNode = treeNode.replace('<div class="task">', '<div class="task parentLevel">');
+  tasktree.parentLevelTreeNode = tasktree.treeNode.replace('<div class="task">', '<div class="task parentLevel">');
 
   var allTasks = localStorage.getItem('allTasks');
   var archivedTasks = localStorage.getItem('archivedTasks');

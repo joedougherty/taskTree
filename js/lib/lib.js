@@ -1,6 +1,7 @@
 window.tasktree = window.tasktree || {};
 
 $(document).ready(function() {
+
   tasktree.archiveCompletedItems = function() {
     // Find all parent level items that are checked.
     var parentLevelItems = $('#currentTasks .parentLevel');
@@ -14,4 +15,9 @@ $(document).ready(function() {
       }
     });
   };
+
+  tasktree.addNewParentLevelItem = function() {
+    $("#wrapper").append( treeNode );
+  };
+
 });
