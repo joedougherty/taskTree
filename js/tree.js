@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+  window.tasktree = window.tasktree;
+
   function ascendLevelsrecur( el, numOfLevels ) {
     if (numOfLevels == 0) {
       return el;
@@ -118,7 +120,6 @@ $(document).ready(function() {
     if ( confirm(" You're sure? They'll disappear...never to be seen again. ") ) {
       window.localStorage.removeItem('allTasks'); 
       $("#wrapper").html("");
-
     } else {
       return false;
     }
@@ -126,17 +127,7 @@ $(document).ready(function() {
 
   // Archive completed items
   $('button.archiveItems').bind('click', function() {
-    // Find all parent level items that are checked.
-    var parentLevelItems = $('#currentTasks .parentLevel');
-    
-    parentLevelItems.each(function() {
-      parentItem = $(this);
-      var checkbox = parentItem.find('.isComplete');
-    
-      if (checkbox.attr('checked') === 'checked') {
-        $('#archiveWrapper').prepend( parentItem );
-      }
-    });
+    tasktree.archiveCompletedItems();
   });
 
   $('a.navLink').bind('click',function() { 
