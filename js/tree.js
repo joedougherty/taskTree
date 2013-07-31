@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  window.tasktree = window.tasktree;
+  window.tasktree = window.tasktree || {};
 
   function ascendLevelsrecur( el, numOfLevels ) {
     if (numOfLevels == 0) {
@@ -45,7 +45,7 @@ $(document).ready(function() {
   if ( allTasks ) {
     $('#wrapper').append( allTasks );
   } else {
-    $('#wrapper').append( parentLevelTreeNode ); // Start 'em off with something
+    $('#wrapper').append( tasktree.parentLevelTreeNode ); // Start 'em off with something
   }
 
   if ( archivedTasks ) {
@@ -54,12 +54,12 @@ $(document).ready(function() {
 
   // Add a node to the given tree
   $("button.addNode").click(function() {
-    $("#wrapper").append( parentLevelTreeNode );
+    $("#wrapper").append( tasktree.parentLevelTreeNode );
   });      	 
 
   // Add nodes
   $('#wrapper').on("click", ".addNode", function(e){
-    $(this).parent().append( treeNode );
+    $(this).parent().append( tasktree.treeNode );
     $(this).parent().children("div").fadeIn();
     
     $(this).parent().find("img.arrow:first").css('visibility', 'visible');
